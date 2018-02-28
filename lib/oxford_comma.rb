@@ -1,18 +1,9 @@
 
-require 'pry'
-
 def oxford_comma(array)
- case
- when array.size == 1
-    array[0]
-  when array.size == 2
-    array[array.size - 1] = " and " + array.last
-    array.join()
-  when array.size == 3
-    array[array.size - 1] = "and " + array.last
-    array.join(', ')
-  when array.size > 3
-    array[array.size - 1] = "and " + array.last
-    array.join(', ')
+  if array.length == 2
+    return "#{array[0]} and #{array[1]}"
+  elsif 2 < array.length
+    array[-1].insert(0, "and ")
   end
+  array.join(", ")
 end
